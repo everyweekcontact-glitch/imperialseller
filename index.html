@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0B1230" />
+  <title>Imperial Seller Company LLC — Import & Export Trading</title>
+      <link rel="icon" type="image/x-icon" href="imperialseller-logo.png">
+  <meta name="description" content="Imperial Seller Company LLC: importación, exportación y trading de bienes físicos. Sourcing, logística, documentación y cumplimiento. Hollywood, Florida." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      /* Palette inspired by your logo */
+      --bg0:#070A18;
+      --bg1:#0B1230;        /* deep navy */
+      --card:#0E1A3C;
+      --line: rgba(255,255,255,.12);
+      --text:#F2F6FF;
+      --muted: rgba(242,246,255,.72);
+
+      --teal:#16C6C5;
+      --teal2:#0BA9B3;
+      --coral:#FF5A5A;
+      --coral2:#FF3E6C;
+      --white:#FFFFFF;
+
+      --shadow: 0 25px 80px rgba(0,0,0,.55);
+      --shadow2: 0 18px 55px rgba(0,0,0,.35);
+
+      --r: 22px;
+      --r2: 16px;
+
+      --max: 1180px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: var(--bg0);
+      overflow-x:hidden;
+    }
+    body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(22,198,197,.16), transparent 60%),
+    radial-gradient(900px 600px at 85% 20%, rgba(255,90,90,.14), transparent 55%),
+    radial-gradient(700px 500px at 30% 90%, rgba(22,198,197,.12), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+/* opcional: un glow sutil adicional que se mueve con el scroll (muy leve) */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 360px at 50% 55%, rgba(255,255,255,.05), transparent 70%);
+  opacity: .55;
+}
+.section{
+  position: relative;
+}
+
+/* separador superior suave */
+.section:not(.no-sep)::before{
+  content:"";
+  position:absolute;
+  left: 0; right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.10),
+    transparent
+  );
+  opacity: .8;
+}
+
+/* “glow break” que hace que se note el cambio de sección */
+.section:not(.no-sep)::after{
+  content:"";
+  position:absolute;
+  left: 0; right: 0;
+  top: -40px;
+  height: 80px;
+  pointer-events:none;
+  background:
+    radial-gradient(600px 80px at 50% 50%, rgba(22,198,197,.10), transparent 70%),
+    radial-gradient(600px 80px at 50% 50%, rgba(255,90,90,.08), transparent 72%);
+  opacity: .9;
+}
+
+
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* Subtle noise overlay */
+    .noise{
+      position:fixed; inset:0;
+      pointer-events:none;
+      background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity:.12;
+      mix-blend-mode:overlay;
+      z-index:0;
+    }
+
+    /* Layout */
+    .wrap{ width:min(var(--max), calc(100% - 2rem)); margin:0 auto; position:relative; z-index:1; }
+    .section{ padding: 92px 0; }
+    .section.sm{ padding: 70px 0; }
+    .section.xs{ padding: 52px 0; }
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,10,24,.78), rgba(7,10,24,.38));
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width:42px; height:42px; object-fit:cover;
+      border-radius:12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brand .name strong{ font-weight:800; letter-spacing:.3px; }
+    .brand .name span{ font-size:12px; color:var(--muted); }
+
+    .menu{
+      display:flex; align-items:center; gap: 18px;
+    }
+    .menu a{
+      font-size:14px; color:rgba(242,246,255,.82);
+      padding:10px 10px;
+      border-radius:12px;
+      transition: all .22s ease;
+      position:relative;
+    }
+    .menu a:hover{
+      background: rgba(255,255,255,.06);
+      transform: translateY(-1px);
+    }
+
+    .actions{
+      display:flex; align-items:center; justify-content:flex-end;
+      gap:10px;
+      min-width: 260px;
+    }
+
+    .lang{
+      display:flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .lang i{ color: rgba(242,246,255,.75); }
+    select{
+      background: transparent;
+      color: var(--text);
+      border: none;
+      font-family: inherit;
+      font-weight: 700;
+      outline:none;
+      cursor:pointer;
+    }
+    select option{ color:#0b0f22; }
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .2px;
+      transition: all .22s ease;
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(22,198,197,.95), rgba(255,90,90,.92));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 60px rgba(22,198,197,.18), 0 22px 70px rgba(255,90,90,.12);
+    }
+    .btn.primary:hover{ filter: saturate(1.05) brightness(1.03); }
+
+    .hamburger{
+      display:none;
+      width:46px; height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      align-items:center; justify-content:center;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .hamburger:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+
+    /* Mobile menu */
+    .drawer{
+      display:none;
+      position:fixed; inset: 68px 0 auto 0;
+      background: rgba(7,10,24,.86);
+      backdrop-filter: blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      z-index:49;
+      padding: 12px 0 18px;
+    }
+    .drawer .links{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .drawer a{
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      font-weight: 800;
+      color: rgba(242,246,255,.86);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 70px 0 40px;
+      position:relative;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 34px;
+      align-items:center;
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow2);
+      width: fit-content;
+      color: rgba(242,246,255,.86);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .kicker .dot{
+      width:9px; height:9px; border-radius:50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 6px rgba(22,198,197,.18);
+    }
+
+    h1{
+      margin: 14px 0 14px;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.8px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.65;
+      max-width: 58ch;
+    }
+    .heroCtas{
+      display:flex; flex-wrap:wrap;
+      gap: 12px;
+      margin-top: 20px;
+      align-items:center;
+    }
+    .heroMeta{
+      margin-top: 18px;
+      display:flex; flex-wrap:wrap; gap: 10px;
+      color: rgba(242,246,255,.74);
+      font-size: 13px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .pill i{ color: rgba(242,246,255,.72); }
+
+    /* 3D / visual card */
+    .visual{
+      position:relative;
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      min-height: 470px;
+      transform-style: preserve-3d;
+    }
+    .visual::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 320px at 20% 25%, rgba(22,198,197,.25), transparent 62%),
+        radial-gradient(520px 320px at 85% 35%, rgba(255,90,90,.20), transparent 60%),
+        linear-gradient(180deg, rgba(14,26,60,.78), rgba(7,10,24,.18));
+      z-index:0;
+    }
+    .visual .overlay{
+      position:absolute; inset:0;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding: 18px;
+      pointer-events:none;
+    }
+    .miniCardRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      pointer-events:none;
+    }
+    .mini{
+      pointer-events:none;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,24,.35);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,.28);
+      min-width: 160px;
+    }
+    .mini b{ display:block; font-size: 12px; color: rgba(242,246,255,.78); }
+    .mini span{ display:block; font-size: 16px; font-weight: 900; letter-spacing: .2px; margin-top: 2px; }
+
+    #threeCanvas{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      z-index:0;
+    }
+
+    /* Section headings */
+    .head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .head h2{
+      margin:0;
+      font-size: clamp(26px, 3vw, 36px);
+      letter-spacing:-.5px;
+      line-height:1.12;
+    }
+    .head p{
+      margin:0;
+      max-width: 58ch;
+      color: var(--muted);
+      line-height:1.6;
+      font-size: 15.5px;
+    }
+
+    /* Cards / grids */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 16px 55px rgba(0,0,0,.28);
+      overflow:hidden;
+      position:relative;
+    }
+    .cardPad{ padding: 18px; }
+    .cardTitle{
+      display:flex; gap:12px; align-items:flex-start;
+      margin-bottom: 10px;
+    }
+    .icon{
+      width: 44px; height: 44px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background: radial-gradient(60% 60% at 30% 25%, rgba(22,198,197,.35), transparent 60%),
+                  radial-gradient(60% 60% at 75% 35%, rgba(255,90,90,.30), transparent 60%),
+                  rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      flex: 0 0 auto;
+    }
+    .icon i{ font-size: 18px; }
+    .card h3{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: -.2px;
+    }
+    .card p{ margin: 8px 0 0; color: var(--muted); line-height: 1.6; font-size: 14.5px; }
+
+    /* Image cards */
+    .imgCard{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 0;
+      overflow:hidden;
+    }
+    .imgCard .photo{
+      position:relative;
+      min-height: 320px;
+      background-size: cover;
+      background-position: center;
+    }
+    .imgCard .photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(7,10,24,.25), rgba(7,10,24,.82));
+    }
+    .imgCard .content{
+      padding: 22px;
+      display:flex; flex-direction:column; justify-content:center;
+    }
+    .list{
+      margin-top: 12px;
+      display:grid; gap: 10px;
+    }
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .check i{ margin-top: 3px; color: var(--teal); }
+    .check span{ color: rgba(242,246,255,.82); line-height:1.55; font-size: 14px; }
+
+    /* Process */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .step{
+      padding: 16px;
+      border-radius: var(--r);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 14px 42px rgba(0,0,0,.24);
+      position:relative;
+      overflow:hidden;
+    }
+    .step::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(240px 160px at 30% 10%, rgba(22,198,197,.20), transparent 60%),
+                  radial-gradient(240px 160px at 80% 30%, rgba(255,90,90,.16), transparent 62%);
+      opacity:.9;
+    }
+    .step > *{ position:relative; z-index:1; }
+    .step b{ display:flex; align-items:center; gap:10px; font-size: 14px; }
+    .step b .n{
+      width:26px; height:26px;
+      border-radius: 10px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      font-weight: 900;
+    }
+    .step p{ margin:10px 0 0; color: var(--muted); line-height:1.6; font-size: 14px; }
+
+    /* Testimonials */
+    .quotes{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .quote{
+      padding: 18px;
+    }
+    .quote .stars{ color: rgba(255,255,255,.85); letter-spacing:2px; }
+    .quote p{ margin: 10px 0 14px; }
+    .quote .who{ display:flex; gap:12px; align-items:center; color: rgba(242,246,255,.84); }
+    .avatar{
+      width: 42px; height: 42px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(22,198,197,.35), rgba(255,90,90,.25));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+    .who b{ display:block; }
+    .who span{ display:block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* FAQ */
+    details{
+      border-radius: var(--r);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 14px 42px rgba(0,0,0,.24);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      padding: 16px 16px;
+      list-style:none;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      font-weight: 900;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details .faqBody{
+      padding: 0 16px 16px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14.5px;
+    }
+    .faqGrid{ display:grid; gap: 12px; }
+
+    /* Contact */
+    .contactWrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+    .contactInfo{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .infoRow{
+      display:flex; gap:12px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .infoRow i{
+      width: 38px; height: 38px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      flex:0 0 auto;
+    }
+    .infoRow b{ display:block; }
+    .infoRow span{ display:block; color: var(--muted); margin-top: 2px; font-size: 13px; }
+
+    form{
+      padding: 18px;
+      display:grid; gap: 12px;
+    }
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,24,.40);
+      color: var(--text);
+      font-family: inherit;
+      outline:none;
+      transition: all .18s ease;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus{
+      border-color: rgba(22,198,197,.55);
+      box-shadow: 0 0 0 6px rgba(22,198,197,.12);
+    }
+    .fine{
+      color: rgba(242,246,255,.62);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* Footer */
+    footer{
+      padding: 30px 0 46px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(7,10,24,0), rgba(7,10,24,.55));
+    }
+    .foot{
+      display:flex; gap: 16px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    .foot small{ color: rgba(242,246,255,.62); }
+
+    /* Reveal animation */
+    .reveal{
+      opacity:0;
+      transform: translateY(18px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.2,.75,.2,1);
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Tilt hover (for some cards) */
+    .tilt{
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform .18s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .visual{ min-height: 420px; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr 1fr; }
+      .quotes{ grid-template-columns: 1fr; }
+      .imgCard{ grid-template-columns: 1fr; }
+      .imgCard .photo{ min-height: 260px; }
+      .contactWrap{ grid-template-columns: 1fr; }
+      .row2{ grid-template-columns: 1fr; }
+      .menu{ display:none; }
+      .hamburger{ display:flex; }
+      .brand{ min-width: unset; }
+      .actions{ min-width: unset; }
+    }
+    @media (max-width: 520px){
+      .hero{ padding-top: 46px; }
+      .mini{ min-width: 140px; }
+      .steps{ grid-template-columns: 1fr; }
+      .lang{ padding: 10px 10px; }
+      .btn{ padding: 12px 14px; border-radius: 14px; }
+      .brand img{ width:40px; height:40px; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+      .reveal{ opacity:1; transform:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Imperial Seller Company LLC">
+          <!-- Put your logo file in the same folder as this HTML -->
+          <img src="imperialseller-logo.png" alt="Imperial Seller Company logo">
+          <div class="name">
+            <strong>Imperial Seller Company LLC</strong>
+            <span data-i18n="nav.tagline">Import / Export Trading</span>
+          </div>
+        </a>
+
+        <div class="menu" aria-label="Primary navigation">
+          <a href="#services" data-i18n="nav.services">Servicios</a>
+          <a href="#industries" data-i18n="nav.industries">Industrias</a>
+          <a href="#process" data-i18n="nav.process">Proceso</a>
+          <a href="#about" data-i18n="nav.about">Nosotros</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#contact" data-i18n="nav.contact">Contacto</a>
+        </div>
+
+        <div class="actions">
+          <div class="lang" title="Language">
+            <i class="fa-solid fa-language"></i>
+            <select id="langSelect" aria-label="Language selector">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+          <a class="btn primary" href="#contact">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-i18n="nav.cta">Cotizar ahora</span>
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="wrap">
+      <div class="links">
+        <a href="#services" data-i18n="nav.services">Servicios</a>
+        <a href="#industries" data-i18n="nav.industries">Industrias</a>
+        <a href="#process" data-i18n="nav.process">Proceso</a>
+        <a href="#about" data-i18n="nav.about">Nosotros</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="wrap heroGrid">
+      <section>
+        <div class="kicker reveal">
+          <span class="dot"></span>
+          <span data-i18n="hero.kicker">Trading internacional de bienes físicos (Import / Export)</span>
+        </div>
+
+        <h1 class="reveal" data-i18n="hero.h1">
+          Conectamos proveedores y compradores con logística, documentos y cumplimiento.
+        </h1>
+
+        <p class="lead reveal" data-i18n="hero.lead">
+          Imperial Seller Company LLC opera como socio comercial para importaciones y exportaciones: búsqueda de proveedores, negociación,
+          coordinación logística, documentación, control de calidad y seguimiento de punta a punta.
+        </p>
+
+        <div class="heroCtas reveal">
+          <a class="btn primary" href="#contact">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="hero.cta1">Hablemos de tu operación</span>
+          </a>
+          <a class="btn" href="#services">
+            <i class="fa-solid fa-compass"></i>
+            <span data-i18n="hero.cta2">Ver servicios</span>
+          </a>
+        </div>
+
+        <div class="heroMeta reveal">
+          <span class="pill"><i class="fa-solid fa-clipboard-check"></i><span data-i18n="hero.meta1">Sourcing & compliance</span></span>
+          <span class="pill"><i class="fa-solid fa-ship"></i><span data-i18n="hero.meta2">Marítimo / aéreo / terrestre</span></span>
+          <span class="pill"><i class="fa-solid fa-file-lines"></i><span data-i18n="hero.meta3">Documentación y trazabilidad</span></span>
+        </div>
+      </section>
+
+      <aside class="visual reveal tilt" id="tiltVisual" aria-label="3D visual">
+        <!-- Three.js canvas -->
+        <canvas id="threeCanvas"></canvas>
+
+        <div class="overlay">
+          <div class="miniCardRow">
+            <div class="mini">
+              <b data-i18n="hero.card1t">Velocidad</b>
+              <span data-i18n="hero.card1v">Lead time optimizado</span>
+            </div>
+            <div class="mini">
+              <b data-i18n="hero.card2t">Control</b>
+              <span data-i18n="hero.card2v">Visibilidad end-to-end</span>
+            </div>
+          </div>
+
+          <div class="miniCardRow" style="justify-content:flex-end">
+            <div class="mini">
+              <b data-i18n="hero.card3t">Foco</b>
+              <span data-i18n="hero.card3v">Bienes reales, no mercados</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Trusted / logos strip -->
+  <section class="section xs">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="cardPad" style="display:flex; gap:18px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h3 style="margin:0" data-i18n="strip.title">Operaciones claras y sin humo</h3>
+              <p style="margin:6px 0 0" data-i18n="strip.desc">Solo comercio de bienes físicos: importación, exportación, compras, logística y documentación.</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="pill"><i class="fa-solid fa-location-dot"></i><span>Hollywood, FL</span></span>
+            <span class="pill"><i class="fa-solid fa-envelope"></i><span>imperialseller.contact@gmail.com</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="services.h2">Servicios</h2>
+          <p class="reveal" data-i18n="services.p">
+            Diseñamos operaciones a medida: desde una compra puntual hasta un flujo recurrente de importación/exportación.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div>
+                <h3 data-i18n="services.c1t">Sourcing & verificación</h3>
+                <p data-i18n="services.c1d">Búsqueda de proveedores, comparativas, validación de capacidad y referencias.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-handshake-angle"></i></div>
+              <div>
+                <h3 data-i18n="services.c2t">Negociación & términos</h3>
+                <p data-i18n="services.c2d">Estructura comercial, Incoterms, empaques, plazos y condiciones de pago.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-ship"></i></div>
+              <div>
+                <h3 data-i18n="services.c3t">Logística internacional</h3>
+                <p data-i18n="services.c3d">Coordinación con forwarders, rutas, consolidación, tracking y entregas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-file-invoice"></i></div>
+              <div>
+                <h3 data-i18n="services.c4t">Documentación & compliance</h3>
+                <p data-i18n="services.c4d">Facturas, packing list, certificados, coordinación aduanera y controles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div>
+                <h3 data-i18n="services.c5t">Calidad & inspecciones</h3>
+                <p data-i18n="services.c5d">Inspecciones pre-embarque, muestreo, fotos/reportes y criterios de aceptación.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <h3 data-i18n="services.c6t">Operaciones recurrentes</h3>
+                <p data-i18n="services.c6d">Abastecimiento continuo, planificación, reposiciones y performance por KPI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px" class="reveal">
+        <div class="card">
+          <div class="cardPad" style="display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+            <div style="display:flex; gap:12px; align-items:center;">
+              <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <h3 style="margin:0" data-i18n="services.ctat">¿Tenés un producto y un destino?</h3>
+                <p style="margin:6px 0 0" data-i18n="services.ctad">Te respondemos con un plan de acción: alternativas, pasos y próximos hitos.</p>
+              </div>
+            </div>
+            <a class="btn primary" href="#contact">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="services.ctab">Pedir propuesta</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section id="industries" class="section sm">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="ind.h2">Industrias y cargas típicas</h2>
+          <p class="reveal" data-i18n="ind.p">
+            Nos adaptamos al tipo de mercadería y a los requisitos del país de origen/destino.
+          </p>
+        </div>
+      </div>
+
+      <div class="card reveal imgCard">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80');"></div>
+        <div class="content">
+          <h3 style="margin:0 0 8px" data-i18n="ind.boxTitle">Lo que solemos mover</h3>
+          <p style="margin:0; color:var(--muted); line-height:1.6" data-i18n="ind.boxDesc">
+            Desde componentes industriales hasta productos de consumo, con foco en embalaje, documentación y trazabilidad.
+          </p>
+          <div class="list">
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="ind.i1">Componentes y repuestos industriales</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="ind.i2">Packaging, insumos y consumibles</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="ind.i3">Electrodomésticos / electrónica de consumo (no financiera)</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="ind.i4">Textil, hogar y productos terminados</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px">
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div>
+                <h3 data-i18n="ind.c1t">Carga consolidada (LCL)</h3>
+                <p data-i18n="ind.c1d">Ideal para volúmenes medios: optimiza costos y mantiene la trazabilidad por bulto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card reveal tilt">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div>
+                <h3 data-i18n="ind.c2t">Aéreo / urgente</h3>
+                <p data-i18n="ind.c2d">Para reposiciones críticas: coordinación rápida y checklist documental estricto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="proc.h2">Proceso simple, controlado y medible</h2>
+          <p class="reveal" data-i18n="proc.p">
+            Menos vueltas: definimos alcance, cerramos términos, ejecutamos y reportamos.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <b><span class="n">1</span> <span data-i18n="proc.s1t">Brief</span></b>
+          <p data-i18n="proc.s1d">Producto, cantidades, destino, urgencia y requisitos (normas, etiquetado, embalaje).</p>
+        </div>
+        <div class="step reveal">
+          <b><span class="n">2</span> <span data-i18n="proc.s2t">Sourcing</span></b>
+          <p data-i18n="proc.s2d">Búsqueda y shortlist de proveedores; comparativa de precios, lead time y condiciones.</p>
+        </div>
+        <div class="step reveal">
+          <b><span class="n">3</span> <span data-i18n="proc.s3t">Ejecución</span></b>
+          <p data-i18n="proc.s3d">Orden, inspección, booking, documentación, tracking y coordinación con aduana/forwarder.</p>
+        </div>
+        <div class="step reveal">
+          <b><span class="n">4</span> <span data-i18n="proc.s4t">Cierre</span></b>
+          <p data-i18n="proc.s4d">Entrega, verificación final, lecciones aprendidas y setup para próximas reposiciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section sm">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="about.h2">Imperial Seller Company LLC</h2>
+          <p class="reveal" data-i18n="about.p">
+            Una empresa de trading enfocada en operaciones reales: bienes, logística y documentación.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card reveal">
+          <div class="cardPad">
+            <div class="cardTitle">
+              <div class="icon"><i class="fa-solid fa-compass-drafting"></i></div>
+              <div>
+                <h3 data-i18n="about.c1t">Diseño de operación</h3>
+                <p data-i18n="about.c1d">Cada carga tiene su estrategia: ruta, incoterm, seguros, documentación y control.</p>
+              </div>
+            </div>
+
+            <div class="cardTitle" style="margin-top:14px">
+              <div class="icon"><i class="fa-solid fa-eye"></i></div>
+              <div>
+                <h3 data-i18n="about.c2t">Transparencia</h3>
+                <p data-i18n="about.c2d">Hitos claros, reportes y checklist para que sepas siempre “qué sigue”.</p>
+              </div>
+            </div>
+
+            <div class="cardTitle" style="margin-top:14px">
+              <div class="icon"><i class="fa-solid fa-shield"></i></div>
+              <div>
+                <h3 data-i18n="about.c3t">Cumplimiento</h3>
+                <p data-i18n="about.c3d">Apoyamos buenas prácticas documentales y coordinación con actores logísticos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal imgCard" style="grid-template-columns:1fr;">
+          <div class="photo" style="min-height: 360px; background-image:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1400&q=80');"></div>
+          <div class="content">
+            <h3 style="margin:0 0 8px" data-i18n="about.boxT">Base</h3>
+            <p style="margin:0; color:var(--muted); line-height:1.6" data-i18n="about.boxD">
+              2721 Ocean Blvd, apt 303 — Hollywood, Florida — ZIP: 33019
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <span class="pill"><i class="fa-solid fa-location-dot"></i><span>Hollywood, FL 33019</span></span>
+              <a class="pill" href="mailto:imperialseller.contact@gmail.com" style="border-color: rgba(22,198,197,.35);">
+                <i class="fa-solid fa-envelope" style="color:var(--teal)"></i><span>imperialseller.contact@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section sm">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="test.h2">Lo que valoran nuestros clientes</h2>
+          <p class="reveal" data-i18n="test.p">
+            Ejemplos de feedback típico en operaciones de importación/exportación.
+          </p>
+        </div>
+      </div>
+
+      <div class="quotes">
+        <div class="card reveal quote tilt">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.q1">“Ordenaron el proceso: checklist documental, tiempos claros y seguimiento real.”</p>
+          <div class="who">
+            <div class="avatar"></div>
+            <div><b data-i18n="test.w1n">Operaciones</b><span data-i18n="test.w1r">Empresa industrial</span></div>
+          </div>
+        </div>
+
+        <div class="card reveal quote tilt">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.q2">“Sourcing con criterio: compararon proveedores y nos ahorraron idas y vueltas.”</p>
+          <div class="who">
+            <div class="avatar"></div>
+            <div><b data-i18n="test.w2n">Compras</b><span data-i18n="test.w2r">Distribución</span></div>
+          </div>
+        </div>
+
+        <div class="card reveal quote tilt">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.q3">“La mejor parte fue la transparencia: siempre supimos el próximo paso.”</p>
+          <div class="who">
+            <div class="avatar"></div>
+            <div><b data-i18n="test.w3n">Dirección</b><span data-i18n="test.w3r">PyME</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section sm">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="faq.h2">Preguntas frecuentes</h2>
+          <p class="reveal" data-i18n="faq.p">
+            Para que tengas claro qué hacemos y cómo trabajamos.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqGrid">
+        <details class="reveal">
+          <summary>
+            <span data-i18n="faq.q1">¿Imperial Seller Company trabaja con crypto o trading financiero?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="faqBody" data-i18n="faq.a1">
+            No. Imperial Seller Company LLC se enfoca en comercio exterior de bienes físicos: importación, exportación, sourcing, logística y documentación.
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>
+            <span data-i18n="faq.q2">¿Pueden ayudar si ya tengo proveedor?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="faqBody" data-i18n="faq.a2">
+            Sí. Podemos sumarnos en negociación, inspección, documentación, coordinación logística y seguimiento hasta la entrega.
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>
+            <span data-i18n="faq.q3">¿Qué información necesito para empezar?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="faqBody" data-i18n="faq.a3">
+            Producto (especificación/foto), cantidad, país de origen/destino, urgencia, y requisitos (embalaje, etiquetado, certificaciones si aplican).
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>
+            <span data-i18n="faq.q4">¿Trabajan con cargas pequeñas?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="faqBody" data-i18n="faq.a4">
+            Sí. Podemos evaluar consolidación (LCL) o aéreo según volumen, urgencia y costo total.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 class="reveal" data-i18n="contact.h2">Contacto</h2>
+          <p class="reveal" data-i18n="contact.p">
+            Contanos qué querés importar o exportar. Respondemos con una propuesta clara y los próximos pasos.
+          </p>
+        </div>
+      </div>
+
+      <div class="contactWrap">
+        <div class="card reveal">
+          <div class="contactInfo">
+            <div class="infoRow">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <b data-i18n="contact.addrT">Dirección</b>
+                <span>2721 Ocean Blvd, apt 303 — Hollywood, Florida — ZIP: 33019</span>
+              </div>
+            </div>
+
+            <div class="infoRow">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <b data-i18n="contact.mailT">Email</b>
+                <span><a href="mailto:imperialseller.contact@gmail.com">contact@imperialseller.simplelogin.com</a></span>
+              </div>
+            </div>
+
+            <div class="infoRow">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <b data-i18n="contact.timeT">Horario</b>
+                <span data-i18n="contact.timeV">Lun–Vie — Coordinación por email</span>
+              </div>
+            </div>
+
+            <div class="card" style="border-radius:16px; margin-top: 2px;">
+              <div class="cardPad">
+                <h3 style="margin:0 0 8px" data-i18n="contact.noteT">Nota</h3>
+                <p style="margin:0; color:var(--muted); line-height:1.6" data-i18n="contact.noteD">
+                  Si tenés una ficha técnica o fotos del producto, adjuntalas respondiendo al email automático luego de enviar el formulario.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <!-- formsubmit.co contact form -->
+          <form action="https://formsubmit.co/imperialsellercontact@duck.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New inquiry — Imperial Seller Company LLC" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- Optional: redirect after submit -->
+            <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" /> -->
+
+            <div class="row2">
+              <div>
+                <label class="fine" for="name" data-i18n="form.nameL">Nombre</label>
+                <input id="name" name="name" type="text" required placeholder="Tu nombre / Your name" />
+              </div>
+              <div>
+                <label class="fine" for="company" data-i18n="form.companyL">Empresa</label>
+                <input id="company" name="company" type="text" placeholder="Opcional / Optional" />
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label class="fine" for="email" data-i18n="form.emailL">Email</label>
+                <input id="email" name="email" type="email" required placeholder="nombre@empresa.com" />
+              </div>
+              <div>
+                <label class="fine" for="route" data-i18n="form.routeL">Origen → Destino</label>
+                <input id="route" name="route" type="text" placeholder="Ej: CN → US / AR → US" />
+              </div>
+            </div>
+
+            <div>
+              <label class="fine" for="message" data-i18n="form.msgL">Mensaje</label>
+              <textarea id="message" name="message" required
+                placeholder="Producto, cantidad, plazos, requisitos… / Product, quantity, deadlines, requirements…"></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="form.send">Enviar</span>
+            </button>
+
+            <div class="fine" data-i18n="form.fine">
+              Al enviar este formulario aceptás que usemos tus datos solo para responder esta consulta.
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="imperialseller-logo.png" alt="Imperial Seller Company logo small" style="width:34px; height:34px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03)">
+        <div>
+          <strong>Imperial Seller Company LLC</strong><br/>
+          <small data-i18n="footer.tag">Import / Export Trading — Hollywood, FL</small>
+        </div>
+      </div>
+
+      <small>© <span id="year"></span> Imperial Seller Company LLC. <span data-i18n="footer.rights">All rights reserved.</span></small>
+    </div>
+  </footer>
+
+  <!-- Three.js (3D) -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+  <script>
+    // -------------------------
+    // Mobile drawer
+    // -------------------------
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+
+    function closeDrawer(){
+      drawer.style.display = 'none';
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    function openDrawer(){
+      drawer.style.display = 'block';
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+
+    hamburger?.addEventListener('click', () => {
+      const isHidden = drawer.getAttribute('aria-hidden') === 'true';
+      if (isHidden) openDrawer(); else closeDrawer();
+    });
+
+    drawer?.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') closeDrawer();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) closeDrawer();
+    });
+
+    // -------------------------
+    // Reveal on scroll
+    // -------------------------
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // -------------------------
+    // Tilt effect (light)
+    // -------------------------
+    function attachTilt(el){
+      if (!el) return;
+      let rect;
+      const max = 8; // degrees-ish
+      const onMove = (e) => {
+        rect = rect || el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const rx = (0.5 - y) * max;
+        const ry = (x - 0.5) * max;
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+      };
+      const onLeave = () => {
+        rect = null;
+        el.style.transform = `perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+      };
+      el.addEventListener('mousemove', onMove);
+      el.addEventListener('mouseleave', onLeave);
+    }
+    document.querySelectorAll('.tilt').forEach(attachTilt);
+
+    // -------------------------
+    // Footer year
+    // -------------------------
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // -------------------------
+    // i18n (ES/EN)
+    // -------------------------
+    const dict = {
+      es: {
+        "nav.tagline":"Import / Export Trading",
+        "nav.services":"Servicios",
+        "nav.industries":"Industrias",
+        "nav.process":"Proceso",
+        "nav.about":"Nosotros",
+        "nav.faq":"FAQ",
+        "nav.contact":"Contacto",
+        "nav.cta":"Cotizar ahora",
+
+        "hero.kicker":"Trading internacional de bienes físicos (Import / Export)",
+        "hero.h1":"Conectamos proveedores y compradores con logística, documentos y cumplimiento.",
+        "hero.lead":"Imperial Seller Company LLC opera como socio comercial para importaciones y exportaciones: búsqueda de proveedores, negociación, coordinación logística, documentación, control de calidad y seguimiento de punta a punta.",
+        "hero.cta1":"Hablemos de tu operación",
+        "hero.cta2":"Ver servicios",
+        "hero.meta1":"Sourcing & compliance",
+        "hero.meta2":"Marítimo / aéreo / terrestre",
+        "hero.meta3":"Documentación y trazabilidad",
+        "hero.card1t":"Velocidad",
+        "hero.card1v":"Lead time optimizado",
+        "hero.card2t":"Control",
+        "hero.card2v":"Visibilidad end-to-end",
+        "hero.card3t":"Foco",
+        "hero.card3v":"Bienes reales, no mercados",
+
+        "strip.title":"Operaciones claras y sin humo",
+        "strip.desc":"Solo comercio de bienes físicos: importación, exportación, compras, logística y documentación.",
+
+        "services.h2":"Servicios",
+        "services.p":"Diseñamos operaciones a medida: desde una compra puntual hasta un flujo recurrente de importación/exportación.",
+        "services.c1t":"Sourcing & verificación",
+        "services.c1d":"Búsqueda de proveedores, comparativas, validación de capacidad y referencias.",
+        "services.c2t":"Negociación & términos",
+        "services.c2d":"Estructura comercial, Incoterms, empaques, plazos y condiciones de pago.",
+        "services.c3t":"Logística internacional",
+        "services.c3d":"Coordinación con forwarders, rutas, consolidación, tracking y entregas.",
+        "services.c4t":"Documentación & compliance",
+        "services.c4d":"Facturas, packing list, certificados, coordinación aduanera y controles.",
+        "services.c5t":"Calidad & inspecciones",
+        "services.c5d":"Inspecciones pre-embarque, muestreo, fotos/reportes y criterios de aceptación.",
+        "services.c6t":"Operaciones recurrentes",
+        "services.c6d":"Abastecimiento continuo, planificación, reposiciones y performance por KPI.",
+        "services.ctat":"¿Tenés un producto y un destino?",
+        "services.ctad":"Te respondemos con un plan de acción: alternativas, pasos y próximos hitos.",
+        "services.ctab":"Pedir propuesta",
+
+        "ind.h2":"Industrias y cargas típicas",
+        "ind.p":"Nos adaptamos al tipo de mercadería y a los requisitos del país de origen/destino.",
+        "ind.boxTitle":"Lo que solemos mover",
+        "ind.boxDesc":"Desde componentes industriales hasta productos de consumo, con foco en embalaje, documentación y trazabilidad.",
+        "ind.i1":"Componentes y repuestos industriales",
+        "ind.i2":"Packaging, insumos y consumibles",
+        "ind.i3":"Electrodomésticos / electrónica de consumo (no financiera)",
+        "ind.i4":"Textil, hogar y productos terminados",
+        "ind.c1t":"Carga consolidada (LCL)",
+        "ind.c1d":"Ideal para volúmenes medios: optimiza costos y mantiene la trazabilidad por bulto.",
+        "ind.c2t":"Aéreo / urgente",
+        "ind.c2d":"Para reposiciones críticas: coordinación rápida y checklist documental estricto.",
+
+        "proc.h2":"Proceso simple, controlado y medible",
+        "proc.p":"Menos vueltas: definimos alcance, cerramos términos, ejecutamos y reportamos.",
+        "proc.s1t":"Brief",
+        "proc.s1d":"Producto, cantidades, destino, urgencia y requisitos (normas, etiquetado, embalaje).",
+        "proc.s2t":"Sourcing",
+        "proc.s2d":"Búsqueda y shortlist de proveedores; comparativa de precios, lead time y condiciones.",
+        "proc.s3t":"Ejecución",
+        "proc.s3d":"Orden, inspección, booking, documentación, tracking y coordinación con aduana/forwarder.",
+        "proc.s4t":"Cierre",
+        "proc.s4d":"Entrega, verificación final, lecciones aprendidas y setup para próximas reposiciones.",
+
+        "about.h2":"Imperial Seller Company LLC",
+        "about.p":"Una empresa de trading enfocada en operaciones reales: bienes, logística y documentación.",
+        "about.c1t":"Diseño de operación",
+        "about.c1d":"Cada carga tiene su estrategia: ruta, incoterm, seguros, documentación y control.",
+        "about.c2t":"Transparencia",
+        "about.c2d":"Hitos claros, reportes y checklist para que sepas siempre “qué sigue”.",
+        "about.c3t":"Cumplimiento",
+        "about.c3d":"Apoyamos buenas prácticas documentales y coordinación con actores logísticos.",
+        "about.boxT":"Base",
+        "about.boxD":"2721 Ocean Blvd, apt 303 — Hollywood, Florida — ZIP: 33019",
+
+        "test.h2":"Lo que valoran nuestros clientes",
+        "test.p":"Ejemplos de feedback típico en operaciones de importación/exportación.",
+        "test.q1":"“Ordenaron el proceso: checklist documental, tiempos claros y seguimiento real.”",
+        "test.w1n":"Operaciones",
+        "test.w1r":"Empresa industrial",
+        "test.q2":"“Sourcing con criterio: compararon proveedores y nos ahorraron idas y vueltas.”",
+        "test.w2n":"Compras",
+        "test.w2r":"Distribución",
+        "test.q3":"“La mejor parte fue la transparencia: siempre supimos el próximo paso.”",
+        "test.w3n":"Dirección",
+        "test.w3r":"PyME",
+
+        "faq.h2":"Preguntas frecuentes",
+        "faq.p":"Para que tengas claro qué hacemos y cómo trabajamos.",
+        "faq.q1":"¿Imperial Seller Company trabaja con crypto o trading financiero?",
+        "faq.a1":"No. Imperial Seller Company LLC se enfoca en comercio exterior de bienes físicos: importación, exportación, sourcing, logística y documentación.",
+        "faq.q2":"¿Pueden ayudar si ya tengo proveedor?",
+        "faq.a2":"Sí. Podemos sumarnos en negociación, inspección, documentación, coordinación logística y seguimiento hasta la entrega.",
+        "faq.q3":"¿Qué información necesito para empezar?",
+        "faq.a3":"Producto (especificación/foto), cantidad, país de origen/destino, urgencia, y requisitos (embalaje, etiquetado, certificaciones si aplican).",
+        "faq.q4":"¿Trabajan con cargas pequeñas?",
+        "faq.a4":"Sí. Podemos evaluar consolidación (LCL) o aéreo según volumen, urgencia y costo total.",
+
+        "contact.h2":"Contacto",
+        "contact.p":"Contanos qué querés importar o exportar. Respondemos con una propuesta clara y los próximos pasos.",
+        "contact.addrT":"Dirección",
+        "contact.mailT":"Email",
+        "contact.timeT":"Horario",
+        "contact.timeV":"Lun–Vie — Coordinación por email",
+        "contact.noteT":"Nota",
+        "contact.noteD":"Si tenés una ficha técnica o fotos del producto, adjuntalas respondiendo al email automático luego de enviar el formulario.",
+
+        "form.nameL":"Nombre",
+        "form.companyL":"Empresa",
+        "form.emailL":"Email",
+        "form.routeL":"Origen → Destino",
+        "form.msgL":"Mensaje",
+        "form.send":"Enviar",
+        "form.fine":"Al enviar este formulario aceptás que usemos tus datos solo para responder esta consulta.",
+
+        "footer.tag":"Import / Export Trading — Hollywood, FL",
+        "footer.rights":"Todos los derechos reservados."
+      },
+
+      en: {
+        "nav.tagline":"Import / Export Trading",
+        "nav.services":"Services",
+        "nav.industries":"Industries",
+        "nav.process":"Process",
+        "nav.about":"About",
+        "nav.faq":"FAQ",
+        "nav.contact":"Contact",
+        "nav.cta":"Request a quote",
+
+        "hero.kicker":"International trading of physical goods (Import / Export)",
+        "hero.h1":"We connect suppliers and buyers with logistics, documentation and compliance.",
+        "hero.lead":"Imperial Seller Company LLC operates as a trading partner for imports and exports: sourcing, negotiation, logistics coordination, documentation, quality control and end-to-end follow-up.",
+        "hero.cta1":"Let’s discuss your shipment",
+        "hero.cta2":"Explore services",
+        "hero.meta1":"Sourcing & compliance",
+        "hero.meta2":"Sea / air / ground",
+        "hero.meta3":"Documentation & traceability",
+        "hero.card1t":"Speed",
+        "hero.card1v":"Optimized lead time",
+        "hero.card2t":"Control",
+        "hero.card2v":"End-to-end visibility",
+        "hero.card3t":"Focus",
+        "hero.card3v":"Real goods, not markets",
+
+        "strip.title":"Clear operations, no fluff",
+        "strip.desc":"Physical-goods trading only: import, export, purchasing, logistics and documentation.",
+
+        "services.h2":"Services",
+        "services.p":"We tailor each operation: from a one-off purchase to a recurring import/export flow.",
+        "services.c1t":"Sourcing & verification",
+        "services.c1d":"Supplier search, comparisons, capability checks and references.",
+        "services.c2t":"Negotiation & terms",
+        "services.c2d":"Commercial structure, Incoterms, packing, lead times and payment conditions.",
+        "services.c3t":"International logistics",
+        "services.c3d":"Coordination with forwarders, routes, consolidation, tracking and deliveries.",
+        "services.c4t":"Documentation & compliance",
+        "services.c4d":"Invoices, packing lists, certificates, customs coordination and controls.",
+        "services.c5t":"Quality & inspections",
+        "services.c5d":"Pre-shipment inspections, sampling, photo reports and acceptance criteria.",
+        "services.c6t":"Recurring operations",
+        "services.c6d":"Continuous supply, planning, replenishment and KPI-based performance.",
+        "services.ctat":"Have a product and a destination?",
+        "services.ctad":"We’ll reply with an action plan: options, steps and next milestones.",
+        "services.ctab":"Request a proposal",
+
+        "ind.h2":"Industries & typical cargo",
+        "ind.p":"We adapt to your goods type and origin/destination requirements.",
+        "ind.boxTitle":"What we usually move",
+        "ind.boxDesc":"From industrial parts to consumer products, focused on packing, documentation and traceability.",
+        "ind.i1":"Industrial components and spare parts",
+        "ind.i2":"Packaging, inputs and consumables",
+        "ind.i3":"Appliances / consumer electronics (non-financial)",
+        "ind.i4":"Textile, home goods and finished products",
+        "ind.c1t":"Consolidated cargo (LCL)",
+        "ind.c1d":"Great for mid volumes: optimizes cost while keeping parcel-level traceability.",
+        "ind.c2t":"Air / urgent",
+        "ind.c2d":"For critical replenishment: fast coordination with strict documentation checklist.",
+
+        "proc.h2":"Simple, controlled and measurable process",
+        "proc.p":"Less back-and-forth: define scope, close terms, execute and report.",
+        "proc.s1t":"Brief",
+        "proc.s1d":"Product, quantities, destination, urgency and requirements (standards, labeling, packing).",
+        "proc.s2t":"Sourcing",
+        "proc.s2d":"Search and shortlist; compare price, lead time and conditions.",
+        "proc.s3t":"Execution",
+        "proc.s3d":"Order, inspection, booking, documentation, tracking and customs/forwarder coordination.",
+        "proc.s4t":"Close-out",
+        "proc.s4d":"Delivery, final verification, lessons learned and setup for the next replenishment.",
+
+        "about.h2":"Imperial Seller Company LLC",
+        "about.p":"A trading company focused on real operations: goods, logistics and documentation.",
+        "about.c1t":"Operation design",
+        "about.c1d":"Each shipment needs a strategy: route, Incoterm, insurance, documentation and control.",
+        "about.c2t":"Transparency",
+        "about.c2d":"Clear milestones, reports and checklists so you always know what’s next.",
+        "about.c3t":"Compliance mindset",
+        "about.c3d":"We support solid documentation practices and coordinate with logistics stakeholders.",
+        "about.boxT":"Based in",
+        "about.boxD":"2721 Ocean Blvd, apt 303 — Hollywood, Florida — ZIP: 33019",
+
+        "test.h2":"What clients value",
+        "test.p":"Examples of typical feedback in import/export operations.",
+        "test.q1":"“They structured the process: document checklists, clear timings, real tracking.”",
+        "test.w1n":"Operations",
+        "test.w1r":"Industrial company",
+        "test.q2":"“Sourcing with criteria: supplier comparisons saved us a lot of time.”",
+        "test.w2n":"Procurement",
+        "test.w2r":"Distribution",
+        "test.q3":"“Best part: transparency — we always knew the next step.”",
+        "test.w3n":"Management",
+        "test.w3r":"SME",
+
+        "faq.h2":"Frequently asked questions",
+        "faq.p":"So you know exactly what we do and how we work.",
+        "faq.q1":"Does Imperial Seller Company do crypto or financial trading?",
+        "faq.a1":"No. Imperial Seller Company LLC focuses on physical-goods foreign trade: import, export, sourcing, logistics and documentation.",
+        "faq.q2":"Can you help if I already have a supplier?",
+        "faq.a2":"Yes. We can support negotiation, inspection, documentation, logistics coordination and tracking through delivery.",
+        "faq.q3":"What do you need to start?",
+        "faq.a3":"Product (spec/photo), quantity, origin/destination country, urgency, and requirements (packing, labeling, certificates if applicable).",
+        "faq.q4":"Do you work with small shipments?",
+        "faq.a4":"Yes. We can evaluate consolidation (LCL) or air depending on volume, urgency and total landed cost.",
+
+        "contact.h2":"Contact",
+        "contact.p":"Tell us what you want to import or export. We’ll reply with a clear proposal and next steps.",
+        "contact.addrT":"Address",
+        "contact.mailT":"Email",
+        "contact.timeT":"Hours",
+        "contact.timeV":"Mon–Fri — coordination by email",
+        "contact.noteT":"Note",
+        "contact.noteD":"If you have a datasheet or product photos, attach them by replying to the automated email after submitting the form.",
+
+        "form.nameL":"Name",
+        "form.companyL":"Company",
+        "form.emailL":"Email",
+        "form.routeL":"Origin → Destination",
+        "form.msgL":"Message",
+        "form.send":"Send",
+        "form.fine":"By submitting this form you agree we use your data only to reply to this inquiry.",
+
+        "footer.tag":"Import / Export Trading — Hollywood, FL",
+        "footer.rights":"All rights reserved."
+      }
+    };
+
+    function applyLang(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = dict?.[lang]?.[key];
+        if (typeof val === "string") el.textContent = val;
+      });
+    }
+
+    const langSelect = document.getElementById('langSelect');
+    const saved = localStorage.getItem('baruja_lang');
+    const initial = saved || (navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en');
+    langSelect.value = initial;
+    applyLang(initial);
+
+    langSelect.addEventListener('change', (e) => {
+      const lang = e.target.value;
+      localStorage.setItem('baruja_lang', lang);
+      applyLang(lang);
+    });
+
+    (function initThree(){
+  const canvas = document.getElementById('threeCanvas');
+  const parent = canvas.parentElement;
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: true
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(parent.clientWidth, parent.clientHeight);
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    38,
+    parent.clientWidth / parent.clientHeight,
+    0.1,
+    100
+  );
+  camera.position.set(0, 8, 15);
+
+  /* Luces */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+
+  const keyLight = new THREE.DirectionalLight(0xffffff, 1);
+  keyLight.position.set(6, 10, 6);
+  scene.add(keyLight);
+
+  const tealLight = new THREE.PointLight(0x16c6c5, 1.2, 40);
+  tealLight.position.set(-8, 6, 4);
+  scene.add(tealLight);
+
+  const coralLight = new THREE.PointLight(0xff5a5a, 1.0, 40);
+  coralLight.position.set(8, 4, -4);
+  scene.add(coralLight);
+
+  /* Grupo principal */
+  const stackGroup = new THREE.Group();
+  scene.add(stackGroup);
+
+  /* Geometría container */
+  const containerGeo = new THREE.BoxGeometry(3.2, 0.9, 1.2);
+
+  const materials = [
+    new THREE.MeshStandardMaterial({ color: 0x16c6c5, roughness: 0.6 }),
+    new THREE.MeshStandardMaterial({ color: 0xff5a5a, roughness: 0.6 }),
+    new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.8 }),
+    new THREE.MeshStandardMaterial({ color: 0x0e1a3c, roughness: 0.9 })
+  ];
+
+  /* Crear pila de containers */
+  const containers = [];
+  const layers = 7;
+  const perLayer = 6;
+
+  for (let y = 0; y < layers; y++) {
+    for (let i = 0; i < perLayer; i++) {
+      const mat = materials[(i + y) % materials.length];
+      const c = new THREE.Mesh(containerGeo, mat);
+
+      const angle = (i / perLayer) * Math.PI * 2;
+      const radius = 3.8;
+
+      c.position.set(
+        Math.cos(angle) * radius,
+        y * 1.05,
+        Math.sin(angle) * radius
+      );
+
+      c.rotation.y = angle + Math.PI / 2;
+
+      stackGroup.add(c);
+      containers.push(c);
+    }
+  }
+
+  /* Animación */
+  let t = 0;
+  function animate() {
+    t += 0.005;
+
+    stackGroup.rotation.y = t * 0.6;
+    stackGroup.rotation.x = Math.sin(t * 0.5) * 0.08;
+
+    containers.forEach((c, i) => {
+      c.position.y += Math.sin(t * 2 + i) * 0.002;
+    });
+
+    camera.lookAt(0, layers * 0.5, 0);
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  /* Resize */
+  function onResize() {
+    const w = parent.clientWidth;
+    const h = parent.clientHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', onResize);
+})();
+  </script>
+</body>
+</html>
